@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Zur Kasse</h1>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+    <main>
+        <form id="checkout-form">
+            <h2>Rechnungsinformationen</h2>
+            <label>
+                Name
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                E‑Mail
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Adresse
+                <textarea name="address" required></textarea>
+            </label>
+            <label>
+                Stadt
+                <input type="text" name="city" required>
+            </label>
+            <label>
+                Postleitzahl
+                <input type="text" name="zip" required>
+            </label>
+            <label>
+                Land
+                <input type="text" name="country" required>
+            </label>
+            <h3>Zahlungsart</h3>
+            <label>
+                <input type="radio" name="payment" value="credit" required>
+                Kreditkarte
+            </label>
+            <label>
+                <input type="radio" name="payment" value="paypal" required>
+                PayPal
+            </label>
+            <button type="submit">Bestellung abschicken</button>
+        </form>
+        <div id="confirmation" class="hidden" style="text-align:center;">
+            <h2>Vielen Dank für Ihre Bestellung!</h2>
+            <p>Sie erhalten in Kürze eine Bestätigungs‑E‑Mail.</p>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Mein Webshop. Alle Rechte vorbehalten.</p>
+    </footer>
+    <script src="checkout.js"></script>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      // Anzeige der aktuellen Warenkorbanzahl in der Navigationsleiste
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cart-count').textContent = count;
+    </script>
+</body>
+</html>

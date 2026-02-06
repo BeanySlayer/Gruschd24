@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Ihr Warenkorb</h1>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+    <main>
+        <div id="cart-items"></div>
+        <div id="cart-summary">
+            <h2>Gesamtbetrag: <span id="cart-total">0 €</span></h2>
+            <button id="checkout-btn">Zur Kasse gehen</button>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Mein Webshop. Alle Rechte vorbehalten.</p>
+    </footer>
+    <script src="cart.js"></script>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
