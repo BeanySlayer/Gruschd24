@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop – gruschd24.de</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap inner">
+      <a class="brand" href="index.html" aria-label="gruschd24.de">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-title">gruschd24<span>.de</span></span>
+      </a>
+      <nav class="nav" data-nav>
+        <a href="shop.html">Shop</a>
+        <a href="info.html">Versand & Zahlung</a>
+        <a href="contact.html">Kontakt</a>
+        <a class="cart-pill" href="cart.html" aria-label="Warenkorb">
+          <span>Warenkorb</span>
+          <span class="badge" id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="card">
+        <div class="pad-lg">
+          <h1 style="margin:0">Shop</h1>
+          <p class="help" style="margin:8px 0 0">3 Kategorien · aktuell 1 Artikel im Bereich <strong>Kioskartikel</strong>.</p>
+
+          <div style="height:14px"></div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px">
+            <div>
+              <label for="q">Suche</label>
+              <input id="q" placeholder="z.B. Smokebloke" autocomplete="off" />
+            </div>
+            <div>
+              <label for="sort">Sortierung</label>
+              <select id="sort">
+                <option value="featured">Empfohlen</option>
+                <option value="name">Name</option>
+                <option value="price_low">Preis (niedrig zuerst)</option>
+                <option value="price_high">Preis (hoch zuerst)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="tabs no-print" id="category-tabs" role="tablist" aria-label="Kategorien"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div id="grid" class="grid grid-3"></div>
+      <div id="empty" class="card" style="display:none">
+        <div class="pad">
+          <h3 style="margin:0 0 6px">Noch nichts hier.</h3>
+          <p class="help" style="margin:0">Diese Kategorie ist bald verfügbar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns: 1.2fr .8fr; gap:14px;">
+        <div>
+          <strong>gruschd24.de</strong><div class="fine">Vorkasse · Versand extra</div>
+        </div>
+        <div style="text-align:right" class="fine">
+          <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/store.js" defer></script>
+  <script src="scripts/common.js" defer></script>
+  <script src="scripts/shop.js" defer></script>
+</body>
+</html>
